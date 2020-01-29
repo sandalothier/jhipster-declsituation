@@ -1,0 +1,69 @@
+{
+    "name": "Pays",
+    "fields": [
+        {
+            "fieldName": "nomPays",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "superficie",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "sigleAuto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "capitale",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "monnaie",
+            "otherEntityRelationshipName": "pays",
+            "relationshipName": "monnaie",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "regions",
+            "otherEntityRelationshipName": "pays",
+            "relationshipName": "regions"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "regroupementRegional",
+            "otherEntityRelationshipName": "pays",
+            "relationshipName": "regroupementRegional"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "continent",
+            "otherEntityRelationshipName": "pays",
+            "relationshipName": "continent",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "regroupementRegional",
+            "otherEntityRelationshipName": "pays",
+            "relationshipName": "regroupementRegional",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200129143157",
+    "javadoc": "Pays entity.\\n@author sanda\\nC'est l'ensemble des pays qui compose chaque continent\\nrelation\\n- OneToMany avec Region\\n- ManyToOne avec Continent\\n- OneToMany avec RegroupementRegional\\n- ManyToOne avec Langue\\n- ManyToOne avec Monnaie\\n",
+    "entityTableName": "pays",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "declsituation",
+    "applications": "*",
+    "microserviceName": "declsituation"
+}

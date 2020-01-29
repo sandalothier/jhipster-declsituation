@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity RegroupementRegional.
+    -->
+    <changeSet id="20200129143158-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pays_id"
+                                 baseTableName="regroupement_regional"
+                                 constraintName="fk_regroupement_regional_pays_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pays"/>
+
+    </changeSet>
+</databaseChangeLog>

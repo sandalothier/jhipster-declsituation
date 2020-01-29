@@ -1,0 +1,34 @@
+{
+    "name": "Monnaie",
+    "fields": [
+        {
+            "fieldName": "monnaie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sigle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "pays",
+            "otherEntityRelationshipName": "monnaie",
+            "relationshipName": "pays",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200129143200",
+    "javadoc": "Monnaie entity.\\n@author sanda\\nC'est l'ensemble des composante du territoire",
+    "entityTableName": "monnaie",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "declsituation",
+    "applications": "*",
+    "microserviceName": "declsituation"
+}

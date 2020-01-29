@@ -1,0 +1,33 @@
+{
+    "name": "Continent",
+    "fields": [
+        {
+            "fieldName": "nomContinent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "superficie",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "pays",
+            "otherEntityRelationshipName": "continent",
+            "relationshipName": "pays"
+        }
+    ],
+    "changelogDate": "20200129143156",
+    "javadoc": "Continent entity.\\n@author sanda\\nC'est l'ensemble des cinq continents du monde",
+    "entityTableName": "continent",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "declsituation",
+    "applications": "*",
+    "microserviceName": "declsituation"
+}
