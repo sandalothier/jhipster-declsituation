@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Pays.
+    -->
+    <changeSet id="20200129143157-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="monnaie_id"
+                                 baseTableName="pays"
+                                 constraintName="fk_pays_monnaie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="monnaie"/>
+
+        <addForeignKeyConstraint baseColumnNames="continent_id"
+                                 baseTableName="pays"
+                                 constraintName="fk_pays_continent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="continent"/>
+
+        <addForeignKeyConstraint baseColumnNames="regroupement_regional_id"
+                                 baseTableName="pays"
+                                 constraintName="fk_pays_regroupement_regional_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="regroupement_regional"/>
+
+    </changeSet>
+</databaseChangeLog>

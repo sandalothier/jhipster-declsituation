@@ -1,0 +1,75 @@
+/**
+ * Continent entity.
+ * @author sanda
+ *  C'est l'ensemble des cinq continents du monde
+
+ */
+entity Continent {
+	nomContinent String
+	superficie Double
+}
+/**
+ * Pays entity.
+ * @author sanda
+ *  C'est l'ensemble des pays qui compose chaque continent
+ *  relation
+ *  	- OneToMany avec Region
+ *  	- ManyToOne avec Continent
+ *  	- OneToMany avec RegroupementRegional
+ * 	- ManyToOne avec Langue
+ * 	- ManyToOne avec Monnaie
+ * 	 
+ */
+entity Pays {
+	nomPays String
+	superficie Double
+	sigleAuto String
+	capitale String
+}
+/**
+ * RegroupementRegional entity.
+ * @author sanda
+ *  C'est le découpage temporel
+ *   relation
+ *   	- OneToMany avec Pays
+ */
+entity RegroupementRegional {
+	sigle String
+	nomRegroupement String
+}
+/**
+ * Region entity.
+ * @author sanda
+ *   C'est l'ensemble des composante du territoire
+ *   relation
+ *   	- ManyToOne avec pays
+ * 	  ManyToOne avec Region pour la region superieur
+ */
+entity Regions {
+	nomRegion String
+	chefLieu String
+}
+/**
+ * Monnaie entity.
+ * @author sanda
+ *   C'est l'ensemble des composante du territoire
+ */
+entity Monnaie {
+	monnaie String
+	sigle String
+}
+relationship OneToMany {
+    Continent to Pays
+}
+relationship OneToMany {
+    Pays to Regions
+}
+relationship OneToOne {
+    Pays to Monnaie
+}
+relationship OneToMany {
+    Pays to RegroupementRegional
+}
+relationship OneToMany {
+    RegroupementRegional to Pays
+}
